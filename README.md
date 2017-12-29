@@ -6,6 +6,7 @@ Based off of [jgamblin's speed.py gist](https://gist.github.com/jgamblin/3428a16
 ### Requirements:
   1) [speedtest-cli](https://pypi.python.org/pypi/speedtest-cli/) is required to use the script 
       -  `speedtest-cli 1.0.7` was used and tested while developing the script
+          - Please note the warnings for the speedtest-cli included in the link above and be aware that "It is not a goal of this application to be a reliable latency reporting tool."
   2) Python's [pathlib](https://pypi.python.org/pypi/pathlib/) is required to use the script 
       - As of 3.4 `pathlib` is supposed to be included in Python's libraries however, I am using Python 3.5.3 on a Raspberry Pi           and I had to add the library manually
 
