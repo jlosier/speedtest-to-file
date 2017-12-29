@@ -12,11 +12,11 @@ Based off of [jgamblin's speed.py gist](https://gist.github.com/jgamblin/3428a16
 ### Usage:
 The script requires **two** arguments when running the script:
 1. Verbosity (true/false)
-- If you want to view output messages and speed test results in console, add the first argument as "true".
-- If you plan on running the script in a scheduled job and only want to see the results in the file, enter "false" as             the first argument.       
+   - If you want to view output messages and speed test results in console, add the first argument as "true".
+   - If you plan on running the script in a scheduled job and only want to see the results in the file, enter "false" as             the first argument.       
 2. File path
-- Should be the full and complete file path plus file name and extension.
-- Supported extensions are .csv and .json (currently in progress)
+   - Should be the full and complete file path plus file name and extension.
+   - Supported extensions are .csv and .json (currently in progress)
 
 Examples:
 ```
