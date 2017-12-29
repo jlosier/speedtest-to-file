@@ -97,7 +97,7 @@ def writeToCsv(results, filePath):
 # start the test
 writeMessage(message = "Performing speed test. Please wait...", verbose = verbose)
 
-speed = os.popen("speedtest-cli").read()
+speed = os.popen("/usr/local/bin/speedtest-cli").read()
 
 writeMessage(message = "Complete! Here are your results:", verbose = verbose)
 
