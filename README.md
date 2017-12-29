@@ -5,9 +5,9 @@ Based off of [jgamblin's speed.py gist](https://gist.github.com/jgamblin/3428a16
 
 ### Requirements:
   1) [speedtest-cli](https://pypi.python.org/pypi/speedtest-cli/) is required to use the script 
-      -  speedtest-cli 1.0.7 was used and tested while developing the script
+      -  `speedtest-cli 1.0.7` was used and tested while developing the script
   2) Python's [pathlib](https://pypi.python.org/pypi/pathlib/) is required to use the script 
-      - As of 3.4 pathlib is supposed to be included in Python's libraries however, I am using Python 3.5.3 on a Raspberry Pi           and I had to add the library manually
+      - As of 3.4 `pathlib` is supposed to be included in Python's libraries however, I am using Python 3.5.3 on a Raspberry Pi           and I had to add the library manually
 
 ### Usage:
 The script requires **two** arguments when running the script:
