@@ -34,15 +34,38 @@ def writeMessage (message, verbose) :
         print(message)
     return;
 
-def writeToJson (results) :
+def writeToJson (results, filePath) :
+    file = Path(filePath)
+    
     try:
-        with open('/home/pi/Documents/speedtest/speedTestResults.json', 'a') as file:
-            json.dump(results, file, sort_keys=True, indent=4)
-            file.close()
-    except IOError:
-        with open('/home/pi/Documents/speedtest/speedTestResults.json', 'w') as newFile:
-            json.dump(results, newFile, sort_keys=True, indent=4)
-            newFile.close()
+        if (file.exists()):
+            with open(filePath) as read:
+                data = json.load(read)
+
+            newJson = []
+            for entry in data:
+                newJson.append({
+                    'timestamp' : entry['timestamp'],
+                    'location' : entry['location'],
+                    'ping' : entry['ping'],
+                    'download' : entry['download'],
+                    'upload' : entry['upload']
+                })
+
+            newJson.append({
+                'timestamp' : results[0]['timestamp'],
+                'location' : results[0]['location'],
+                'ping' : results[0]['ping'],
+                'download' : results[0]['download'],
+                'upload' : results[0]['upload']
+            })
+
+        
+        with open(filePath, 'w') as write:
+            json.dump(newJson, write, indent=4)
+            write.close()
+    except IOError as (errno, strerror):
+        print("I/O error({0}): {1}".format(errno, strerror))
     else:
         writeMessage(message = "Results successfully written to json file", verbose = verbose)
 
@@ -109,6 +132,6 @@ writeMessage(message = "Download (Mbit/s): " + results[0]['download'], verbose =
 writeMessage(message = "Upload (Mbit/s): " + results[0]['upload'], verbose = verbose)
 
 if (fileFormat == "json"):
-    writeToJson(results = results)
+    writeToJson(results = results, filePath = filePath)
 else:
     writeToCsv(results = results, filePath = filePath)
