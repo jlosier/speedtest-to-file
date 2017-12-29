@@ -24,6 +24,19 @@ Examples:
 $ python speedtest-to-file.py true /home/pi/Documents/speedtests/speedtest.csv
 $ python speedtest-to-file.py false /home/pi/Documents/speedtests/speedtest.json
 ``` 
+### Example Output:
+```
+pi@raspberrypi:~/Documents/speedtest-to-file $ python speedtest-to-file.py true /home/pi/Documents/speedtest/results.json
+Performing speed test. Please wait...
+Complete! Here are your results:
+Timestamp: 2017-12-29 13:16:33
+Location: Hosted by <company> (<city, ST>) [3.66 km]
+Ping (ms): 43.075
+Download (Mbit/s): 17.56
+Upload (Mbit/s): 1.04
+Results successfully written to json file
+```
+
 ### Notes:
 speedtest-cli output:
 ```
