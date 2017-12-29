@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 import os
 import sys
 import time
@@ -36,13 +38,13 @@ def writeMessage (message, verbose) :
 
 def writeToJson (results, filePath) :
     file = Path(filePath)
-    
+
+    newJson = []
     try:
         if (file.exists()):
             with open(filePath) as read:
                 data = json.load(read)
 
-            newJson = []
             for entry in data:
                 newJson.append({
                     'timestamp' : entry['timestamp'],
@@ -52,14 +54,13 @@ def writeToJson (results, filePath) :
                     'upload' : entry['upload']
                 })
 
-            newJson.append({
-                'timestamp' : results[0]['timestamp'],
-                'location' : results[0]['location'],
-                'ping' : results[0]['ping'],
-                'download' : results[0]['download'],
-                'upload' : results[0]['upload']
-            })
-
+        newJson.append({
+            'timestamp' : results[0]['timestamp'],
+            'location' : results[0]['location'],
+            'ping' : results[0]['ping'],
+            'download' : results[0]['download'],
+            'upload' : results[0]['upload']
+        })
         
         with open(filePath, 'w') as write:
             json.dump(newJson, write, indent=4)
