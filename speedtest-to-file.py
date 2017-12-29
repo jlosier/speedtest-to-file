@@ -136,3 +136,5 @@ if (fileFormat == "json"):
     writeToJson(results = results, filePath = filePath)
 else:
     writeToCsv(results = results, filePath = filePath)
+
+    
