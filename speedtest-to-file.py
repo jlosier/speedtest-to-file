@@ -5,22 +5,7 @@ import json
 import csv
 from pathlib import Path
 
-# index - value
-# 0 - "Retrieving speedtest.net configuration..."
-# 1 - Your IP
-# 2 - "Retrieving speedtest.net server list..."
-# 3 - "Selecting best server based on ping..."
-# 4 - <hosted by> (location) [km]: <ping> ms
-# 5 - "Testing download speed...."
-# 6 - Download: <dl> Mbit/s
-# 7 - "Testing upload speed...."
-# 8 - Upload: <ul> Mbit/s
-# 9 - *empty*
-
 # handle arguments
-# $ python *.py <verbose: true/false> <file path>
-# example$ python *.py true /home/pi/Documents/speedtest/speedtest.json
-
 try:
     verbose = sys.argv[1].upper()
     filePath = sys.argv[2]
