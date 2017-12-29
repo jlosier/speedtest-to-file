@@ -9,7 +9,7 @@ Based off of [jgamblin's speed.py gist](https://gist.github.com/jgamblin/3428a16
   2) Python's [pathlib](https://pypi.python.org/pypi/pathlib/) is required to use the script 
       - As of 3.4 pathlib is supposed to be included in Python's libraries however, I am using Python 3.5.3 on a Raspberry Pi           and I had to add the library manually
 
-Usage:
+### Usage:
 The script requires **two** arguments when running the script:
 1. Verbosity (true/false)
 - If you want to view output messages and speed test results in console, add the first argument as "true".
@@ -18,24 +18,23 @@ The script requires **two** arguments when running the script:
 - Should be the full and complete file path plus file name and extension.
 - Supported extensions are .csv and .json (currently in progress)
 
-  Examples:
-  
-    $ python speedtest-to-file.py true /home/pi/Documents/speedtests/speedtest.csv
-    $ python speedtest-to-file.py false /home/pi/Documents/speedtests/speedtest.json
-    
-Notes:
-
-  speedtest-cli output:
-  
-    index - value
-    0 - "Retrieving speedtest.net configuration..."
-    1 - Your IP
-    2 - "Retrieving speedtest.net server list..."
-    3 - "Selecting best server based on ping..."
-    4 - <hosted by> (location) [km]: <ping> ms
-    5 - "Testing download speed...."
-    6 - Download: <dl> Mbit/s
-    7 - "Testing upload speed...."
-    8 - Upload: <ul> Mbit/s
-    9 - *empty*
-    
+Examples:
+```
+$ python speedtest-to-file.py true /home/pi/Documents/speedtests/speedtest.csv
+$ python speedtest-to-file.py false /home/pi/Documents/speedtests/speedtest.json
+``` 
+### Notes:
+speedtest-cli output:
+```
+index - value
+0 - "Retrieving speedtest.net configuration..."
+1 - Your IP
+2 - "Retrieving speedtest.net server list..."
+3 - "Selecting best server based on ping..."
+4 - <hosted by> (location) [km]: <ping> ms
+5 - "Testing download speed...."
+6 - Download: <dl> Mbit/s
+7 - "Testing upload speed...."
+8 - Upload: <ul> Mbit/s
+9 - *empty*
+```    
